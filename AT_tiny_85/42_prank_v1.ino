@@ -3,6 +3,7 @@
  * To be compiled and flashed with Arduino IDE, on an AT Tiny 85 device, with appropriate libraries
  * This payload is designed for MacOS
  * It opens a regular terminal and pimps the zshrc, dock, and opens a regular rickroll
+ * Be careful at embedded memory, you shall not use more than ~52/53% of it to prevent malfunctions
  */
 
 #include "DigiKeyboard.h"
