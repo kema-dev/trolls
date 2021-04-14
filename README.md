@@ -1,4 +1,4 @@
-# ATtiny85-payloads
+# Rasperrino projects
 My personnal payloads for AT Tiny 85 "Rubber Ducky", and AT Tiny 85 and RPi pico "Keylogger"
 
 To be implemented :
