@@ -7,7 +7,7 @@ SOUND="$DIR$NAME.mp3"
 
 mkdir -p "$DIR"
 if [ ! -e "$SOUND" ]; then
-	wget -q -O "$SOUND" "https://github.com/kema-dev/trolls/blob/main/shell_audio/apoil.mp3\?raw\=true"
+	wget -q -O "$SOUND" "https://raw.githubusercontent.com/kema-dev/trolls/main/shell_audio_42/apoil.mp3"
 	chmod 655 "$SOUND"
 fi
 
