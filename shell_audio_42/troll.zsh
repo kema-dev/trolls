@@ -7,7 +7,7 @@ SOUND="$DIR$NAME.mp3"
 if [ -e "$ZSH_CUSTOM" ]; then
 	ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 	DIR="$ZSH_CUSTOM/$NAME/"
-	echo "source $DIR$NAME.plugin.zsh" >> "$FILE"
+	echo -e "\nsource $DIR$NAME.plugin.zsh" >> "$FILE"
 else ! grep -q "$STRING" "$FILE" ; then
 	DIR="$ZSH_CUSTOM/$NAME/"
 	sed -i "s/^$REG/$STRING /" "$FILE"
